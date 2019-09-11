@@ -5,6 +5,7 @@
     "moduleResolution": "node",
     "outDir": "build",
     "target": "es5",
+    "lib": ["es5", "es6", "dom"],
     "sourceMap": true,
     "skipDefaultLibCheck": true,
     "forceConsistentCasingInFileNames": true,
