@@ -237,9 +237,12 @@ export class Tracer {
       parent = this.stack[0];
       parent.transactions[cur.id] = cur;
     } else {
-      let field = typeToParentField[cur.type];
-      if(!parent[field]) throw new Error(`Trying to write trace field '${field}', but ${TraceFrameType[parent.type]} doesn't have it`);
-      parent[field].push(cur);
+      // let txType:TraceFrameType = cur.type as TraceFrameType
+      // let field:string = typeToParentField[txType];
+      // let field:string = typeToParentField[TraceFrameType.Transaction];
+
+      // if(!parent[field]) throw new Error(`Trying to write trace field '${field}', but ${TraceFrameType[parent.type]} doesn't have it`);
+      // parent[field].push(cur);
     }
 
     if(cur.type === TraceFrameType.Block) this.tracker.blockEnd(cur.name);
